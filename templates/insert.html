@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block myblock %}
+    <div class="row">
+        <div class="w-50 mx-auto">
+            <a class="btn btn-info float-right mb-1" href="../">Back</a>
+            <form  method="POST" class="">
+                
+                {% if messages %}
+                    {% for msg in messages %}
+                        <div class="alert alert-{{msg.tags}} alert-dismissible">
+                            <a href="" class="close" data-dissmiss="alert">&times;</a>
+                            {{msg}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    
+                
+                {% csrf_token %}
+               <div class="form-group">
+                    {{myform}}
+                    <div>
+                        <input class="btn btn-success float-right mt-1" type="submit" value="Add Note">
+                    </div>
+               </div>
+            </form>
+        </div>
+    </div>
+{% endblock myblock %}
+    

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block myblock %}
+    <div class="row mt-3">
+        <div class="col">
+            <div class="w-25 text-danger mx-auto p-3 border border-dark">
+                    <form method="POST">
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <div class="alert alert-{{msg.tags}} alert-dismissible">
+                                    <a href="" class="close" data-dissmiss="alert">&times;</a>
+                                    {{msg}}    
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% csrf_token %}
+                         
+                        <div class="form-group">
+                             {{myform.as_table}}
+                             <div>
+                                 <input class="mt-2 btn btn-info" type="submit" value="login">
+                             </div>   
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+{% endblock myblock %}
+    

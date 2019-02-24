@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block myblock %}
+<div class="row mt-1">
+        <div class="col">
+            <div class="w-25 text-danger mx-auto p-3 border border-dark">
+                  <h2>
+                        hi {{username}},<a class="btn btn-danger float-right" href="logout">Logout</a>
+                  </h2>
+                    <div class="clearfix"></div>    
+                <div class="card mt-2">
+                    <div class="card-header">Select Your Choice</div>
+                    <div class="card-body">
+                            <div class="list-group text-center">
+                                    <a href="insert" class="list-group-item list-group-item-action list-group-item-primary">
+                                        Insert Notes
+                                    </a>
+                                    <a href="display" class="list-group-item list-group-item-action list-group-item-secondary">
+                                        Display Notes
+                                    </a>
+                                    <a href="update" class="list-group-item list-group-item-action list-group-item-success">
+                                        Update Notes
+                                    </a>
+                                    <a href="delete" class="list-group-item list-group-item-action list-group-item-danger">
+                                        Delete Notes
+                                    </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock myblock %}
+    
